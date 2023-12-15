@@ -95,6 +95,36 @@ int main() {
 
 // Method-3 using trie data structure
 
+
+
+// Q2 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+/* class Solution {
+public:
+    int firstUniqChar(string s) {
+        int digit = -1;
+        int visited[s.size()];
+        for(int i = 0; i < s.size(); i++)
+        {
+            for(int j = 0; j < s.size(); j++)
+            {
+                if(s[i]==s[j] && i!=j)
+                {
+                    visited[i]++;
+                }
+            }
+        }
+        for(int i = 0; i<s.size()-1; i++)
+        {
+            if(visited[i]==1)
+            {
+                digit = i;
+            }
+        }
+        return digit;
+    }
+}; */
+
 // Q3 Suppose we have a file system that stores both files and directories. An example of one system is represented in the following picture. Here, we have dir as the only directory in the root. dir contains two subdirectories, subdir1 and subdir2. subdir1 contains a file file1.ext and subdirectory subsubdir1. subdir2 contains a subdirectory subsubdir2, which contains a file file2.ext. In text form, it looks like this (with ⟶ representing the tab character):
 
 /* dir
