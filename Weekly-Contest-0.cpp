@@ -9,17 +9,17 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> arr();
+    vector<int> arr;
 
     void next(int i, int n)
     {
-        if (i >= n)
+        if (i > n)
         {
             return;
         }
         arr.push_back(i);
         next(i * 10, n);
-        if ((i + 1) % 10 != 0)
+        if ((i + 1) % 10 != 0 && (i + 1) <= n)
         {
             next(i + 1, n);
         }
@@ -32,12 +32,15 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
-    Solution* s = new vector<int>();
-    for (int i = 0; i < s->arr.size(); i++)
+    Solution s;
+    int n;
+    cin>>n;
+    vector<int> result = s.lexicographical_order(n);
+    for (int i = 0; i < result.size(); i++)
     {
-        cout << s->arr[i] << " ";
+        cout << result[i] << " ";
     }
     return 0;
 }
