@@ -95,7 +95,143 @@ int main() {
 
 // Method-3 using trie data structure
 
+/* struct Node{
+    Node* links[10];
+    bool flag = false;
+};
 
+class Trie{
+public:
+    Node* head;
+    Trie(){
+        head = new Node();
+    }
+
+    void insert(string s){
+        Node* node = head;
+        for(auto ch : s){
+            if(node->links[ch - '0'] == NULL){
+                node->links[ch - '0'] = new Node();
+            }
+            node = node->links[ch - '0'];
+        }
+        node->flag = 1;
+    }
+    
+};
+
+class Solution {
+public:
+    vector<int>ans;
+    void dfs(Node* node, string &curr){
+        if(node->flag == 1){
+            ans.push_back(stoi(curr));
+        }
+        for(int i=0; i<10; i++){
+            if(node->links[i]){
+                curr += (i + '0');
+                dfs(node->links[i],curr);
+                curr.pop_back();
+            }
+        }
+    }
+    vector<int> lexicalOrder(int n) {
+        Trie t;
+        for(int i=1; i<=n; i++){
+            t.insert(to_string(i));
+        }
+        string curr = "";
+        dfs(t.head,curr);
+        return ans;
+    }
+}; */
+
+// Method-4 using only one while loop in the main function
+
+/* class Solution {
+ public:
+  vector<int> lexicalOrder(int n) {
+    vector<int> ans;
+    int curr = 1;
+
+    while (ans.size() < n) {
+      ans.push_back(curr);
+      if (curr * 10 <= n) {
+        curr *= 10;
+      } else {
+        while (curr % 10 == 9 || curr == n)
+          curr /= 10;
+        ++curr;
+      }
+    }
+
+    return ans;
+  }
+}; */
+
+// Method-5 using set
+
+/* class Solution {
+public:
+    vector<int> lexicalOrder(int n) {
+        set<string> stt;
+        vector<int> ans;
+        for(int i=1;i<=n;i++){
+            stt.insert(to_string(i));
+        }
+
+        for(auto it=stt.begin();it!=stt.end();it++){
+            ans.push_back(stoi(*it));
+        }
+        return ans;
+    }
+}; */
+
+// Method-6 using bit manipulation
+
+/* class Solution {
+public:
+    vector<int> lexicalOrder(int n) {
+        vector<int> ans(n);
+        int curr=1;
+        // int i=1;
+        for(int i=0; i<n; i++){
+            ans[i] = curr;
+            if(((curr << 3) + (curr << 1))<=n){
+                curr = (curr << 3) + (curr << 1);
+            }
+            else{
+                if(curr>= n){
+                    curr /=10;
+                }
+                curr +=1;
+                while(curr%10 == 0){
+                    curr/=10;
+                }
+            }
+        }
+        return ans;
+    }
+}; */
+
+// Method-7 using sorting
+
+/* class Solution {
+public:
+    vector<int> lexicalOrder(int n) {
+        vector<string> v;
+        for(int i=1;i<=n;i++){
+            string str = to_string(i);
+            v.push_back(str);
+        }
+        sort(v.begin(),v.end());
+        vector<int> ans;
+        for(int i=0;i<v.size();i++){
+            ans.push_back(stoi(v[i]));
+        }
+        return ans;
+    }
+}; */
 
 // Q2 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
 
