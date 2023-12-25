@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/saksh/OneDrive/Desktop/leetcode-contest-solutions-main/weekly_contest-3",
-      "program": "c:/Users/saksh/OneDrive/Desktop/leetcode-contest-solutions-main/weekly_contest-3/build/Debug/outDebug",
+      "cwd": "c:/Users/8186s/OneDrive/Documents/GitHub/leetcode-contest-solutions/weekly_contest-004",
+      "program": "c:/Users/8186s/OneDrive/Documents/GitHub/leetcode-contest-solutions/weekly_contest-004/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
