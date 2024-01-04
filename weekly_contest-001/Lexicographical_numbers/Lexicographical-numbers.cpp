@@ -1,8 +1,6 @@
-// Question-1 Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order. You must write an algorithm that runs in O(n) time and uses O(1) extra space.
-
 // Method-1 using recursion
 
-/* #include <iostream>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -43,7 +41,7 @@ int main()
         cout << result[i] << " ";
     }
     return 0;
-} */
+} 
 
 // Method-2 using for loop and function for all values from 1 to n
 

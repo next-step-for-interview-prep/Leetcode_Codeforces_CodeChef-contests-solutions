@@ -1,6 +1,8 @@
-// Q2 Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+#include <iostream>
+#include <string>
+using namespace std;
 
-/* class Solution {
+class Solution {
 public:
     int firstUniqChar(string s) {
         int digit = -1;
@@ -24,4 +26,4 @@ public:
         }
         return digit;
     }
-}; */
+};
