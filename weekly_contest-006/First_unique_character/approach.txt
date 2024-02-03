@@ -1,0 +1,3 @@
+To solve this question, we can keep a visited array all values initialized as -1 that will track which element gets visited more than once and which does not and the one with 0 visited array value can be returned as we are traversing through the array.
+
+Another approach can be by making pairs in map to their ASCII value and if we are able to find same ASCII value as current then we can move to next element and add the previous one to our map. 
